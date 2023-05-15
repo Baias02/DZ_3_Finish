@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FirstFragment">
+    
+    <TextView
+        android:id="@+id/text_location"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:gravity="center"
+        android:text="225 Central Park West, NY 10024, USA"
+        android:drawableEnd="@drawable/ic_vniz"
+        android:paddingHorizontal="15dp"
+        android:drawableStart="@drawable/ic_lacotion"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/text_delivery"
+        android:layout_width="104dp"
+        android:layout_height="36dp"
+        android:background="@drawable/corner_rad"
+        android:text="Delivery"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/orange"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:layout_marginVertical="18dp"
+        android:layout_marginStart="12dp"
+        app:drawableStartCompat="@drawable/ic_deliveru"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_location"/>
+
+    <TextView
+        android:id="@+id/pickup"
+        android:layout_width="90dp"
+        android:layout_height="36dp"
+        android:text="Pickup"
+        android:gravity="center"
+        android:textColor="@color/green"
+        android:background="@drawable/corner_rad"
+        app:layout_constraintStart_toEndOf="@id/text_delivery"
+        app:layout_constraintTop_toBottomOf="@id/text_location"
+        android:layout_marginHorizontal="6dp"
+        android:layout_marginVertical="18dp"/>
+
+    <TextView
+        android:id="@+id/catering"
+        android:layout_width="90dp"
+        android:layout_height="36dp"
+        android:text="Catering"
+        android:gravity="center"
+        android:textColor="@color/green"
+        android:background="@drawable/corner_rad"
+        app:layout_constraintStart_toEndOf="@id/pickup"
+        app:layout_constraintTop_toBottomOf="@id/text_location"
+        android:layout_marginHorizontal="6dp"
+        android:layout_marginVertical="18dp"/>
+
+   <TextView
+    android:id="@+id/curbside"
+    android:layout_width="90dp"
+    android:layout_height="36dp"
+    android:text="Curbside"
+    android:gravity="center"
+    android:textColor="@color/green"
+    android:background="@drawable/corner_rad"
+    app:layout_constraintStart_toEndOf="@id/catering"
+    app:layout_constraintTop_toBottomOf="@id/text_location"
+    android:layout_marginHorizontal="6dp"
+    android:layout_marginVertical="18dp"/>
+    
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="387dp"
+        android:layout_height="48dp"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="Find store by name"
+        android:layout_marginTop="17dp"
+        android:drawableEnd="@drawable/ic_scan"
+        android:drawableStart="@drawable/ic_search"
+        app:layout_constraintTop_toBottomOf="@id/text_delivery"
+        android:background="@android:color/transparent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recuclerview_prof"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_profil"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search"/>
+    
+    <TextView
+        android:id="@+id/text58"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="58"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="22dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recuclerview_prof"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:text="stores Open"
+        app:layout_constraintStart_toEndOf="@id/text58"
+        app:layout_constraintTop_toTopOf="@id/text58"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/recuclerview_pizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_burger_pizza"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text58"
+        android:layout_marginTop="16dp"/>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
